@@ -1,6 +1,12 @@
 // toutes les cartes
 let allCards = document.querySelectorAll('.item');
 
+
+allCards.forEach((card) => {
+  card.classList.add('intro');
+});
+
+
 let cptClickCurrent = 0;
 let dataImageShowed;
 
@@ -45,5 +51,9 @@ function playGame(card) {
     }
     cptClickCurrent = 0;
     dataImageShowed = '';
+
+// compter les cartes pas trouvées
+// si 0 alors gagné, jeu fini
+
   }
 }

@@ -1,24 +1,36 @@
 /* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */
 @import 'variables';
+@import 'mixin';
 
+.item {
+  &.hidden {
+    @include backgroundImage('./../img/logo.jpg');
+    /* background-color: rgba(245, 245, 220, 0.103); */
+    /* background-color: $backgoundItemColor; */
+    /*  transform: rotateY(180deg);  */
 
-.item.hidden p {
-visibility: hidden;
-
+    &:hover {
+      /* background-color: $backgoundItemColorHover; */
+      cursor: pointer;
+      animation: zoomOut;
+      animation-duration: 1s;
+    }
+  }
+  &.hidden > p img {
+    visibility: hidden;
+  }
+  // anim intro
+  &.intro {
+    animation: bounceIn;
+    animation-duration: 3s;
+  }
 }
 
-.item.show p {
-  visibility: visible;
+.item.finded {
+  color: aquamarine;
+}
 
-  }
-
-
-  .item:hover {
-    background-color:  $backgoundItemColorHover;
-    cursor: pointer;
-  }
-
-
-  .item.finded p {
-    color: rgb(0, 255, 55);
-  }
+h1 {
+  animation: bounceIn;
+  animation-duration: 6s;
+}

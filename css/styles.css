@@ -1,20 +1,40 @@
-/* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */ /* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */ /* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */ /* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */
+@charset "UTF-8";
+/* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */
 @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
-.item.hidden p {
+@font-face {
+  font-family: "avengers";
+  src: url("../font/AVENGEANCE HEROIC AVENGER AT.ttf") format("truetype");
+}
+/* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */ /* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */ /* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */ /* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */
+.item.hidden {
+  background-image: url("./../img/logo.jpg");
+  background-position: center;
+  background-size: cover;
+  /* background-color: rgba(245, 245, 220, 0.103); */
+  /* background-color: $backgoundItemColor; */
+  /*  transform: rotateY(180deg);  */
+}
+.item.hidden:hover {
+  /* background-color: $backgoundItemColorHover; */
+  cursor: pointer;
+  animation: zoomOut;
+  animation-duration: 1s;
+}
+.item.hidden > p img {
   visibility: hidden;
 }
-
-.item.show p {
-  visibility: visible;
+.item.intro {
+  animation: bounceIn;
+  animation-duration: 3s;
 }
 
-.item:hover {
-  background-color: rgb(133, 206, 166);
-  cursor: pointer;
+.item.finded {
+  color: aquamarine;
 }
 
-.item.finded p {
-  color: rgb(0, 255, 55);
+h1 {
+  animation: bounceIn;
+  animation-duration: 6s;
 }
 
 /* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */ /* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */ /* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */
@@ -31,18 +51,24 @@ body {
 h1 {
   margin-top: -2rem;
   margin-bottom: 2rem;
-  font-size: 7vmin;
-  color: rgb(26, 204, 64);
+  font-size: 10vmin;
+  /*couleur font degradée*/
+  background: linear-gradient(180deg, #eeeddb 40%, #99bddf 70%);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  min-height: 70vh;
-  min-width: 70vw;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  height: 70vh;
+  width: 70vw;
+  animation: pulse;
+  animation-duration: 3s;
 }
 
 .item {
@@ -50,11 +76,17 @@ h1 {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  background-color: rgb(95, 156, 122);
-  margin: 1px;
-  transition: 1s;
+  transition: 0.8s;
   min-height: 2rem;
   min-width: 2rem;
+}
+.item p {
+  width: 100%;
+  height: 100%;
+}
+.item p img {
+  width: 100%;
+  height: 100%;
 }
 
 .div1 {
@@ -138,7 +170,7 @@ h1 {
 }
 
 * {
-  font-family: "Luckiest Guy", cursive;
+  font-family: avengers;
   box-sizing: border-box;
   /* border: 1px solid red; */
   margin: 0;

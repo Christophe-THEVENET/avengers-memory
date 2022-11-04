@@ -7,3 +7,16 @@
   flex-wrap: wrap;
 }
 
+@mixin backgroundImage($url) {
+  background-image: url($url);
+  background-position: center;
+  background-size: cover;
+}
+
+@mixin titleGrandientColor {
+  /*couleur font degradée*/
+  background: linear-gradient(180deg, #eeeddb 40%, #99bddf 70%);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

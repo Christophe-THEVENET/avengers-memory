@@ -1,12 +1,18 @@
 /* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */
 
+@font-face {
+  font-family: 'avengers';
+  src: url('../font/AVENGEANCE HEROIC AVENGER AT.ttf') format('truetype'),
+}
+
+
 
 @import 'composant';
 @import 'effets';
 @import 'layout';
 
 * {
-  font-family: 'Luckiest Guy', cursive;
+  font-family: avengers;
   box-sizing: border-box;
   /* border: 1px solid red; */
   margin: 0;
@@ -18,7 +24,6 @@
 
 @media screen and (max-width: 680px) {
   .container {
-   
     height: 80vh;
     width: 100vw;
   }
