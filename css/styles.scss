@@ -8,10 +8,18 @@
 * {
   font-family: 'Luckiest Guy', cursive;
   box-sizing: border-box;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   margin: 0;
   padding: 0;
   color: $generalFontColor;
   font-size: $generalFontSize;
 }
 
+
+@media screen and (max-width: 680px) {
+  .container {
+   
+    height: 80vh;
+    width: 100vw;
+  }
+}

@@ -13,6 +13,10 @@
   cursor: pointer;
 }
 
+.item.finded p {
+  color: rgb(0, 255, 55);
+}
+
 /* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */ /* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */ /* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */
 body {
   min-height: 100vh;
@@ -27,7 +31,8 @@ body {
 h1 {
   margin-top: -2rem;
   margin-bottom: 2rem;
-  font-size: 2.3rem;
+  font-size: 7vmin;
+  color: rgb(26, 204, 64);
 }
 
 .container {
@@ -48,6 +53,8 @@ h1 {
   background-color: rgb(95, 156, 122);
   margin: 1px;
   transition: 1s;
+  min-height: 2rem;
+  min-width: 2rem;
 }
 
 .div1 {
@@ -133,11 +140,18 @@ h1 {
 * {
   font-family: "Luckiest Guy", cursive;
   box-sizing: border-box;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   margin: 0;
   padding: 0;
   color: rgb(144, 209, 84);
   font-size: 1.5rem;
+}
+
+@media screen and (max-width: 680px) {
+  .container {
+    height: 80vh;
+    width: 100vw;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
