@@ -1,2 +1,19 @@
 /* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */
+@import 'variables';
 
+
+.item.hidden p {
+visibility: hidden;
+
+}
+
+.item.show p {
+  visibility: visible;
+
+  }
+
+
+  .item:hover {
+    background-color:  $backgoundItemColorHover;
+    cursor: pointer;
+  }

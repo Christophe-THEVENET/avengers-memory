@@ -1,6 +1,19 @@
 /* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */ /* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */ /* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */ /* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */
 @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
-/* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */ /* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */
+.item.hidden p {
+  visibility: hidden;
+}
+
+.item.show p {
+  visibility: visible;
+}
+
+.item:hover {
+  background-color: rgb(133, 206, 166);
+  cursor: pointer;
+}
+
+/* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */ /* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */ /* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */
 body {
   min-height: 100vh;
   background-color: rgb(8, 31, 41);
@@ -12,9 +25,9 @@ body {
 }
 
 h1 {
-  margin-top: -5rem;
-  margin-bottom: 5rem;
-  color: rgb(144, 209, 84);
+  margin-top: -2rem;
+  margin-bottom: 2rem;
+  font-size: 2.3rem;
 }
 
 .container {
@@ -25,6 +38,16 @@ h1 {
   grid-row-gap: 0px;
   min-height: 70vh;
   min-width: 70vw;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: rgb(95, 156, 122);
+  margin: 1px;
+  transition: 1s;
 }
 
 .div1 {
@@ -107,13 +130,14 @@ h1 {
   grid-area: 4/5/5/6;
 }
 
-/* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */
 * {
   font-family: "Luckiest Guy", cursive;
   box-sizing: border-box;
   border: 1px solid red;
   margin: 0;
   padding: 0;
+  color: rgb(144, 209, 84);
+  font-size: 1.5rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

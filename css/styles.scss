@@ -4,7 +4,6 @@
 @import 'composant';
 @import 'effets';
 @import 'layout';
-@import 'mixin';
 
 * {
   font-family: 'Luckiest Guy', cursive;
@@ -12,5 +11,7 @@
   border: 1px solid red;
   margin: 0;
   padding: 0;
+  color: $generalFontColor;
+  font-size: $generalFontSize;
 }
 
