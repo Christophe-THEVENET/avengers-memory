@@ -1,0 +1,16 @@
+/* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */
+
+
+@import 'composant';
+@import 'effets';
+@import 'layout';
+@import 'mixin';
+
+* {
+  font-family: 'Luckiest Guy', cursive;
+  box-sizing: border-box;
+  border: 1px solid red;
+  margin: 0;
+  padding: 0;
+}
+
