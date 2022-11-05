@@ -1,34 +1,14 @@
-/*-----  toggle bouton son (on/off)--------*/
-
-let soundOn = true;
-/* for (let btnSound of btnSoundAll) {
-    btnSound.addEventListener('click', () => {
-        if (soundOn === true) {
-            soundOn = false;
-            btnSound.textContent = 'son (off)';
-        } else {
-            soundOn = true;
-            btnSound.textContent = 'son (on)';
-        }
-        return;
-    });
-} */
-
 /*-----  JOUER UN SON AVEC REGLAGE VOLUME --------*/
-
 const playSound = (src, vol) => {
   let sound = new Audio(src);
-  if (soundOn === true) {
-    sound.play();
-    sound.volume = vol;
-  } else {
-    sound.pause();
-  }
+  sound.play();
+  sound.volume = vol;
 };
+/*musique intro au chargement de la page */
+document.addEventListener('DOMContentLoaded', () => {
+  playSound('sound/intro.mp3', 0.3);
+});
 
-window.onload = function () {
-  playSound('./sound/intro.mp3', 0.5);
-};
 
 // TO DO LIST
 
@@ -90,7 +70,7 @@ function playGame(card) {
       let cardClickedBefore = document.getElementById(cardClikedId);
       // ================ gagné===================
       if (cardClickedBefore.dataset.image === card.dataset.image) {
-        playSound('./sound/foundCard.mp3', 0.3);
+        playSound('sound/foundCard2.wav', 0.05);
         // pour toutes les cartes
         allCards.forEach((card) => {
           // si trouvé
@@ -100,7 +80,7 @@ function playGame(card) {
           }
         });
       } else {
-        playSound('./sound/lose.mp3', 0.2);
+        playSound('sound/lose.wav', 0.05);
       }
       cptClickCurrent = 0;
       cardClikedId = '';
