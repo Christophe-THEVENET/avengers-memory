@@ -24,13 +24,39 @@
     animation: bounceIn;
     animation-duration: 3s;
   }
+ 
 }
 
-.item.finded {
-  color: aquamarine;
+.container.win {
+  animation: bounceIn;
+  animation-duration: 3s;
 }
 
 h1 {
   animation: bounceIn;
   animation-duration: 6s;
+}
+
+
+.cardFound {
+  animation: jello;
+  animation-duration: 5s;
+}
+
+.win {
+  animation: jackInTheBox;
+  animation-duration: 10s;
+}
+
+
+.modal {
+  position: absolute;
+  font-size: 5rem;
+  animation: bounceIn;
+  animation-duration: 6s;
+  @include modalGrandientColor;
+}
+
+.modal.hidden {
+  visibility: hidden;
 }

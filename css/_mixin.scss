@@ -20,3 +20,12 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+
+@mixin modalGrandientColor {
+  /*couleur font degradée*/
+  background: linear-gradient(180deg, #15fc00e7 40%, #056312 70%);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

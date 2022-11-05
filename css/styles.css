@@ -28,13 +28,40 @@
   animation-duration: 3s;
 }
 
-.item.finded {
-  color: aquamarine;
+.container.win {
+  animation: bounceIn;
+  animation-duration: 3s;
 }
 
 h1 {
   animation: bounceIn;
   animation-duration: 6s;
+}
+
+.cardFound {
+  animation: jello;
+  animation-duration: 5s;
+}
+
+.win {
+  animation: jackInTheBox;
+  animation-duration: 10s;
+}
+
+.modal {
+  position: absolute;
+  font-size: 5rem;
+  animation: bounceIn;
+  animation-duration: 6s;
+  /*couleur font degradée*/
+  background: linear-gradient(180deg, rgba(21, 252, 0, 0.9058823529) 40%, #056312 70%);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.modal.hidden {
+  visibility: hidden;
 }
 
 /* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */ /* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */ /* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */

@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
   playSound('sound/intro.mp3', 0.3);
 });
 
-
 // TO DO LIST
 
 // aléatoire placement carte
@@ -21,8 +20,23 @@ document.addEventListener('DOMContentLoaded', () => {
 // toutes les cartes
 let allCards = document.querySelectorAll('.item');
 
+let container = document.querySelector('.container');
+
+let allImg = document.querySelectorAll('img');
+let modal = document.querySelector('.modal');
+
+
+/* allImg.forEach((img) => {
+  // cache les images non trouvées
+  
+    img.classList.remove('win');
+  
+}); */
+
 // déclarer tableau de toutes les cartes
 let arrayCards = [];
+
+let nbCardFinded = 0;
 
 // effet a l intro
 allCards.forEach((card) => {
@@ -68,9 +82,11 @@ function playGame(card) {
       card.classList.remove('hidden');
       // recup la carte cliqué
       let cardClickedBefore = document.getElementById(cardClikedId);
-      // ================ gagné===================
+      // --------------------------------- 2 cartes trouvée
       if (cardClickedBefore.dataset.image === card.dataset.image) {
         playSound('sound/foundCard2.wav', 0.05);
+        // nb carte trouvées
+        nbCardFinded += 2;
         // pour toutes les cartes
         allCards.forEach((card) => {
           // si trouvé
@@ -79,6 +95,40 @@ function playGame(card) {
             card.classList.add('finded');
           }
         });
+
+
+
+
+
+
+
+      
+        modal.classList.remove('hidden')
+
+setTimeout(() => {
+modal.classList.add('hidden')
+ 
+}, 500); 
+
+
+
+
+
+
+
+
+
+
+        // ------------------------------------- partie gangnés
+        if (nbCardFinded === 20) {
+          playSound('sound/win.mp3', 0.05);
+          // effet continer win
+          container.classList.add('win');
+          // effet img win
+          allImg.forEach((img) => {
+            img.classList.add('win');
+          });
+        }
       } else {
         playSound('sound/lose.wav', 0.05);
       }
@@ -89,4 +139,10 @@ function playGame(card) {
       // si 0 alors gagné, jeu fini
     }
   }
+}
+
+
+
+function flashName(modal) {
+
 }
