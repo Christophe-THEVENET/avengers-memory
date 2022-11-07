@@ -50,12 +50,12 @@ function playGame(card) {
         });
 
         title.classList.add('title-found');
-        /*-----  NOM DU HEROS TROUV2 --------*/
+        /*------------------------------------ Nom du héros*/
         title.textContent = card.dataset.image;
         setTimeout(() => {
           title.textContent = 'avengers memory';
           title.classList.remove('title-found');
-        }, 1000);
+        }, 2000);
 
         // ------------------------------------- partie gangnés
         if (nbCardFinded === 20) {
@@ -67,6 +67,7 @@ function playGame(card) {
             img.classList.add('win');
           });
         }
+         // --------------------------------- 2 cartes pas trouvées
       } else {
         playSound('sound/lose.wav', 0.05);
       }

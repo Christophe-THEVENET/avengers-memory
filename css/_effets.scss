@@ -5,6 +5,8 @@
 .item {
   &.hidden {
     @include backgroundImage('./../img/logo.jpg');
+    animation: bounceIn;
+    animation-duration: 3s;
     &:hover {
       cursor: pointer;
       animation: heartBeat;
@@ -16,17 +18,18 @@
   }
 }
 
-
-
 .container.win {
   animation: bounceIn;
   animation-duration: 3s;
 }
 
 h1 {
-  animation: bounceIn;
-  animation-duration: 1s;
+  animation: fadeIn;
+  animation-duration: 0.5s; 
+  width: 100%;
+  text-align: center;
 }
+
 
 .cardFound {
   animation: jello;
@@ -39,9 +42,13 @@ h1 {
 }
 
 .title-found {
-@include modalGrandientColor;
-animation: jello;
-animation-duration: 1s;
+  @include modalGrandientColor;
+  animation: flash;
+  animation-duration: 1s;
 }
 
+.finded {
+  animation: rubberBand;
+  animation-duration: 1s;
+}
 

@@ -26,13 +26,12 @@ h1 {
   height: 70vh;
   width: 70vw;
   animation: pulse;
-  animation-duration: 3s; 
+  animation-duration: 2s; 
 
 }
 
 .item {
   @include centerElement;
-  transition: 0.8s;
   min-height: 2rem;
   min-width: 2rem;
   

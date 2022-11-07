@@ -11,7 +11,6 @@ let cardClikedId;
 
 
 
-
 /*musique intro au chargement de la page */
 document.addEventListener('DOMContentLoaded', () => {
   playSound('sound/intro.mp3', 0.3);
