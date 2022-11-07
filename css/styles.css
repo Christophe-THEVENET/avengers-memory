@@ -10,22 +10,14 @@
   background-image: url("./../img/logo.jpg");
   background-position: center;
   background-size: cover;
-  /* background-color: rgba(245, 245, 220, 0.103); */
-  /* background-color: $backgoundItemColor; */
-  /*  transform: rotateY(180deg);  */
 }
 .item.hidden:hover {
-  /* background-color: $backgoundItemColorHover; */
   cursor: pointer;
-  animation: zoomOut;
-  animation-duration: 1s;
+  animation: heartBeat;
+  animation-duration: 2s;
 }
 .item.hidden > p img {
   visibility: hidden;
-}
-.item.intro {
-  animation: bounceIn;
-  animation-duration: 3s;
 }
 
 .container.win {
@@ -35,7 +27,7 @@
 
 h1 {
   animation: bounceIn;
-  animation-duration: 6s;
+  animation-duration: 1s;
 }
 
 .cardFound {
@@ -48,20 +40,14 @@ h1 {
   animation-duration: 10s;
 }
 
-.modal {
-  position: absolute;
-  font-size: 5rem;
-  animation: bounceIn;
-  animation-duration: 6s;
+.title-found {
   /*couleur font degradée*/
   background: linear-gradient(180deg, rgba(21, 252, 0, 0.9058823529) 40%, #056312 70%);
   background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.modal.hidden {
-  visibility: hidden;
+  animation: jello;
+  animation-duration: 1s;
 }
 
 /* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */ /* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */ /* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */

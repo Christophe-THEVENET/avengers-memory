@@ -5,27 +5,18 @@
 .item {
   &.hidden {
     @include backgroundImage('./../img/logo.jpg');
-    /* background-color: rgba(245, 245, 220, 0.103); */
-    /* background-color: $backgoundItemColor; */
-    /*  transform: rotateY(180deg);  */
-
     &:hover {
-      /* background-color: $backgoundItemColorHover; */
       cursor: pointer;
-      animation: zoomOut;
-      animation-duration: 1s;
+      animation: heartBeat;
+      animation-duration: 2s;
     }
   }
   &.hidden > p img {
     visibility: hidden;
   }
-  // anim intro
-  &.intro {
-    animation: bounceIn;
-    animation-duration: 3s;
-  }
- 
 }
+
+
 
 .container.win {
   animation: bounceIn;
@@ -34,9 +25,8 @@
 
 h1 {
   animation: bounceIn;
-  animation-duration: 6s;
+  animation-duration: 1s;
 }
-
 
 .cardFound {
   animation: jello;
@@ -48,15 +38,10 @@ h1 {
   animation-duration: 10s;
 }
 
-
-.modal {
-  position: absolute;
-  font-size: 5rem;
-  animation: bounceIn;
-  animation-duration: 6s;
-  @include modalGrandientColor;
+.title-found {
+@include modalGrandientColor;
+animation: jello;
+animation-duration: 1s;
 }
 
-.modal.hidden {
-  visibility: hidden;
-}
+

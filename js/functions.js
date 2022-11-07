@@ -4,55 +4,8 @@ const playSound = (src, vol) => {
   sound.play();
   sound.volume = vol;
 };
-/*musique intro au chargement de la page */
-document.addEventListener('DOMContentLoaded', () => {
-  playSound('sound/intro.mp3', 0.3);
-});
 
-// TO DO LIST
-
-// aléatoire placement carte
-// début et fin de partie
-//bug click 2 fois la meme carte
-// bouton pour relancer une game
-// animation victoire
-
-// toutes les cartes
-let allCards = document.querySelectorAll('.item');
-
-let container = document.querySelector('.container');
-
-let allImg = document.querySelectorAll('img');
-let modal = document.querySelector('.modal');
-
-
-/* allImg.forEach((img) => {
-  // cache les images non trouvées
-  
-    img.classList.remove('win');
-  
-}); */
-
-// déclarer tableau de toutes les cartes
-let arrayCards = [];
-
-let nbCardFinded = 0;
-
-// effet a l intro
-allCards.forEach((card) => {
-  card.classList.add('intro');
-});
-
-let cptClickCurrent = 0;
-let cardClikedId;
-
-// pour chaque carte au click -> playgame(card)
-allCards.forEach((card) => {
-  card.addEventListener('click', () => {
-    playGame(card);
-  });
-});
-
+/*----------------  JEU ------------------------------*/
 function playGame(card) {
   cptClickCurrent++;
 
@@ -96,33 +49,18 @@ function playGame(card) {
           }
         });
 
-
-
-
-
-
-
-      
-        modal.classList.remove('hidden')
-
-setTimeout(() => {
-modal.classList.add('hidden')
- 
-}, 500); 
-
-
-
-
-
-
-
-
-
+        title.classList.add('title-found');
+        /*-----  NOM DU HEROS TROUV2 --------*/
+        title.textContent = card.dataset.image;
+        setTimeout(() => {
+          title.textContent = 'avengers memory';
+          title.classList.remove('title-found');
+        }, 1000);
 
         // ------------------------------------- partie gangnés
         if (nbCardFinded === 20) {
           playSound('sound/win.mp3', 0.05);
-          // effet continer win
+          // effet container win
           container.classList.add('win');
           // effet img win
           allImg.forEach((img) => {
@@ -139,10 +77,4 @@ modal.classList.add('hidden')
       // si 0 alors gagné, jeu fini
     }
   }
-}
-
-
-
-function flashName(modal) {
-
 }
