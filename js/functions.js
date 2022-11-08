@@ -5,11 +5,27 @@ const playSound = (src, vol) => {
   sound.volume = vol;
 };
 
+/*===================  AFFICHE REGLES AU DEPART ====================*/
+function popRulesOnStart() {
+  //cache popup regle
+  modal.classList.add('stop');
+  setTimeout(() => {
+    //affiche popup regle apres 1500s
+    modal.classList.remove('stop');
+  }, 1500);
+  setTimeout(() => {
+    //cache popup regle apres 4000s
+    modal.classList.add('stop');
+  }, 4000);
+}
 
+/*-================================  CLICK SUR UNE CARTE =================================*/
+function clickOnCardEvent(card) {
+  // s iclick sur carte trouvé sortie de la fonction
+  if (card.classList.contains('finded')) {
+    return;
+  }
 
-
-/*-================================  JEU =================================*/
-function playGame(card) {
   cptClickCurrent++;
 
   // ---------------------------------------------------- 1er click
@@ -70,7 +86,7 @@ function playGame(card) {
             img.classList.add('win');
           });
         }
-         // -------------------------------------------- 2 cartes pas trouvées
+        // -------------------------------------------- 2 cartes pas trouvées
       } else {
         playSound('sound/lose.wav', 0.05);
       }
@@ -82,6 +98,4 @@ function playGame(card) {
     }
   }
 }
-
-
 
