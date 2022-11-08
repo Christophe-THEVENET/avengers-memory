@@ -1,11 +1,11 @@
-/*===================  JOUER UN SON AVEC REGLAGE VOLUME ====================*/
+/*=====================  JOUER UN SON AVEC REGLAGE VOLUME ====================*/
 const playSound = (src, vol) => {
   let sound = new Audio(src);
   sound.play();
   sound.volume = vol;
 };
 
-/*===================  AFFICHE REGLES AU DEPART ====================*/
+/*========================  AFFICHE REGLES AU DEPART =========================*/
 function popRulesOnStart() {
   //cache popup regle
   modal.classList.add('stop');
@@ -19,7 +19,51 @@ function popRulesOnStart() {
   }, 4000);
 }
 
-/*-================================  CLICK SUR UNE CARTE =================================*/
+/*========================  TRI ALEATOIREMENT TABLEAU =========================*/
+function shuffleArray(array) {
+  array.sort(() => Math.random() - 0.5);
+}
+
+/*=====================  TRANSFORME TABLEAU EN TABLEAU DE PAIRES===================*/
+function makeArrayWithPair(array) {
+  let arrayWithPair = [];
+  for (let i = 0; i < array.length; i++) {
+    arrayWithPair.push(array[i]);
+    arrayWithPair.push(array[i]);
+  }
+  return arrayWithPair;
+}
+
+function createHtmlCard(array) {
+  // crée le html
+  for (let i = 0; i < array.length; i++) {
+
+
+    // ajout div
+    let div = document.createElement('div');
+    div.classList.add('div' + i);
+    div.classList.add('item');
+    div.classList.add('hidden');
+    div.classList.add('intro');
+    div.setAttribute('id', i);
+    div.dataset.image = arrayAvengers[i];
+    container.append(div);
+
+    //ajout p
+    let p = document.createElement('p');
+    div.append(p);
+
+    //ajout image
+    let img = document.createElement('img');
+    img.setAttribute('src', '/img/' + array[i] + '.jpg');
+    p.append(img);
+  
+    /* 
+    allImg[i].src = '/img/' + arrayAvengers[i] + '.jpg'; */
+  }
+}
+
+/*-==========================  CLICK SUR UNE CARTE ===========================*/
 function clickOnCardEvent(card) {
   // s iclick sur carte trouvé sortie de la fonction
   if (card.classList.contains('finded')) {
@@ -70,7 +114,8 @@ function clickOnCardEvent(card) {
 
         title.classList.add('title-found');
         /*---------------------------------------------- Nom du héros*/
-        title.textContent = card.dataset.image;
+        // (remplace _ par espace)
+        title.textContent = card.dataset.image.replace('_', ' ');
         setTimeout(() => {
           title.textContent = 'avengers memory';
           title.classList.remove('title-found');
@@ -98,4 +143,3 @@ function clickOnCardEvent(card) {
     }
   }
 }
-

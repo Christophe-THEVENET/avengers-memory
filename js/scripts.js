@@ -1,12 +1,13 @@
-
-
 /************* au chargement de la page ***************/
-document.addEventListener('DOMContentLoaded', () => {
-  //musique intro
-  /* playSound('sound/intro.mp3', 0.3); */
-  //popup des règles
-  popRulesOnStart();
-});
+//musique intro
+playSound('sound/intro.mp3', 0.3); 
+//popup des règles
+popRulesOnStart();
+
+// créé les paires d'avengers dans le tableau
+let arrayAvengers = makeArrayWithPair(arrayAvengersSimple);
+// melange le tableau des avengers
+shuffleArray(arrayAvengers);
 
 // TO DO LIST
 
@@ -17,11 +18,19 @@ document.addEventListener('DOMContentLoaded', () => {
 // animation victoire
 
 
+// ********* ajout html en dynamique *****************
+createHtmlCard(arrayAvengers);
 
-/************* au click d'une carte ***************/
+
+
+let allCards = document.querySelectorAll('.item');
+let allImg = document.querySelectorAll('img');
+
+
+
+/**************** au click d'une carte ***************/
 allCards.forEach((card) => {
   card.addEventListener('click', () => {
     clickOnCardEvent(card);
   });
 });
-
