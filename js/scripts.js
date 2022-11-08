@@ -1,11 +1,11 @@
 /************* au chargement de la page ***************/
 
-document.addEventListener('DOMContentLoaded', function () {
-  //musique intro
-  playSound('sound/intro.mp3', 0.3);
-  //popup des règles
-  popRulesOnStart();
-});
+
+//popup des règles
+popRulesOnStart();
+
+
+
 
 // créé les paires d'avengers dans le tableau
 let arrayAvengers = makeArrayWithPair(arrayAvengersSimple);
@@ -20,11 +20,16 @@ shuffleArray(arrayAvengers);
 // bouton pour relancer une game
 // animation victoire
 
+
 // ********* ajout html en dynamique *****************
 createHtmlCard(arrayAvengers);
 
+
+
 let allCards = document.querySelectorAll('.item');
 let allImg = document.querySelectorAll('img');
+
+
 
 /**************** au click d'une carte ***************/
 allCards.forEach((card) => {
