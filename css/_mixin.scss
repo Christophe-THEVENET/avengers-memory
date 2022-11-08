@@ -29,3 +29,12 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+
+@mixin popupGrandientColor {
+  /*couleur font degradée*/
+  background: linear-gradient(180deg, #fceb00e7 40%, #616305 70%);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

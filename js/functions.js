@@ -1,15 +1,18 @@
-/*-----  JOUER UN SON AVEC REGLAGE VOLUME --------*/
+/*===================  JOUER UN SON AVEC REGLAGE VOLUME ====================*/
 const playSound = (src, vol) => {
   let sound = new Audio(src);
   sound.play();
   sound.volume = vol;
 };
 
-/*----------------  JEU ------------------------------*/
+
+
+
+/*-================================  JEU =================================*/
 function playGame(card) {
   cptClickCurrent++;
 
-  // -------------------------------------------- 1er click
+  // ---------------------------------------------------- 1er click
   if (cptClickCurrent === 1) {
     // parcours les cartes
     allCards.forEach((card) => {
@@ -23,7 +26,7 @@ function playGame(card) {
     // stock id de l'image
     cardClikedId = card.id;
 
-    // --------------------------------------- 2eme click
+    // --------------------------------------------------- 2eme click
   } else if (cptClickCurrent === 2) {
     // si la carte que j'ai clické = carte déja cliqué stop
     if (cardClikedId === card.id) {
@@ -35,7 +38,7 @@ function playGame(card) {
       card.classList.remove('hidden');
       // recup la carte cliqué
       let cardClickedBefore = document.getElementById(cardClikedId);
-      // --------------------------------- 2 cartes trouvée
+      // --------------------------------------------- 2 cartes trouvée
       if (cardClickedBefore.dataset.image === card.dataset.image) {
         playSound('sound/foundCard2.wav', 0.05);
         // nb carte trouvées
@@ -50,14 +53,14 @@ function playGame(card) {
         });
 
         title.classList.add('title-found');
-        /*------------------------------------ Nom du héros*/
+        /*---------------------------------------------- Nom du héros*/
         title.textContent = card.dataset.image;
         setTimeout(() => {
           title.textContent = 'avengers memory';
           title.classList.remove('title-found');
         }, 2000);
 
-        // ------------------------------------- partie gangnés
+        // ---------------------------------------------- partie gangnés
         if (nbCardFinded === 20) {
           playSound('sound/win.mp3', 0.05);
           // effet container win
@@ -67,7 +70,7 @@ function playGame(card) {
             img.classList.add('win');
           });
         }
-         // --------------------------------- 2 cartes pas trouvées
+         // -------------------------------------------- 2 cartes pas trouvées
       } else {
         playSound('sound/lose.wav', 0.05);
       }
@@ -79,3 +82,6 @@ function playGame(card) {
     }
   }
 }
+
+
+

@@ -5,7 +5,28 @@
   font-family: "avengers";
   src: url("../font/AVENGEANCE HEROIC AVENGER AT.ttf") format("truetype");
 }
-/* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */ /* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */ /* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */ /* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */
+/* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */ /* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */ /* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */
+.modal {
+  /*couleur font degradée*/
+  background: linear-gradient(180deg, rgba(252, 235, 0, 0.9058823529) 40%, #616305 70%);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+  top: 50vh;
+  z-index: 500;
+  font-size: 7vmin;
+  width: 100%;
+  text-align: center;
+  word-wrap: break-word;
+  animation: heartBeat;
+  animation-duration: 2s;
+}
+.modal.stop {
+  display: none;
+}
+
+/* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */ /* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */ /* !!!!!!!!!!!!!! npm run sass !!!!!!!!!!!! */
 .item.hidden {
   background-image: url("./../img/logo.jpg");
   background-position: center;
@@ -40,8 +61,8 @@ h1 {
 }
 
 .win {
-  animation: jackInTheBox;
-  animation-duration: 10s;
+  animation: wobble;
+  animation-duration: 20s;
 }
 
 .title-found {
