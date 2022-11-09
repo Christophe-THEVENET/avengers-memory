@@ -12,5 +12,4 @@ Il faut trouver les paires des Avengers
 ![](./img/img-readme.png)
 
 
-https://avengers-memory.netlify.app/
 
